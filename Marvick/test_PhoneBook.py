@@ -1,20 +1,25 @@
 import unittest
-import PhoneBook
+from Marvick import PhoneBook
 
 
-
-
-class TestPhoneBook(unittest.TestCase):
-
+class test_phone_book(unittest.TestCase):
 
     def test_add_contact(self):
-        PhoneBook.add_contact("timi","seee","081111112222", "dshdhhd@dkdk")
-        self.assertEqual(1, )
+        self.assertEqual(0, len(PhoneBook.get_contact_name()))
+        self.assertEqual(0, len(PhoneBook.get_contact_phone_number()))
+
+        PhoneBook.add_contact("joy", "12334566")
+        self.assertEqual(1, len(PhoneBook.get_contact_name()))
+        self.assertEqual(1, len(PhoneBook.get_contact_phone_number()))
+
+        PhoneBook.add_contact("joy", "12334566")
+        self.assertEqual(2, len(PhoneBook.get_contact_name()))
+        self.assertEqual(2, len(PhoneBook.get_contact_phone_number()))
     def test_remove_contact(self):
-        Phonebook.add_contact()
+        PhoneBook.add_contact("joy", "12334566")
+        PhoneBook.add_contact("timi", "566")
 
-        Phonebook.remove_contact()
-
-    def test_display_contacts(self):
-        Phonebook.add_contact()
-        Phonebook.display_contacts()
+        PhoneBook.remove_contact_name("joy")
+        self.assertEqual(0, len(PhoneBook.get_contact_name()))
+        PhoneBook.remove_contact_phone_number("12334566")
+        self.assertEqual(0, len(PhoneBook.get_contact_phone_number()))
