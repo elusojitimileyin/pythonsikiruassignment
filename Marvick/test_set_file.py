@@ -1,53 +1,48 @@
 import unittest
-from unittest import TestCase
+from Marvick import set_file
 
-import python_ass_test
+class test_python_set(unittest.TestCase):
+    def test_that_the_original_element_in_list_is_returned_after_duplicate(self):
+        prototype = [1, 3, 2, 2, 1, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15, 15]
 
-
-def test_that_the_original_element_in_list_is_returned_after_duplicate():
-    prototype = [1, 3, 2, 2, 1, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15,
-                 15]
-
-
-class MyTestCase(unittest.TestCase):
     def test_that_a_sequential_list_is_created(self):
         prototype = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-        self.assertTrue(python_ass_test.creation_of_my_list(prototype))
+        self.assertTrue(set_file.creation_of_my_list(prototype))
 
     def test_that_a_duplicate_element_is_in_my_list(self):
         prototype = [1, 3, 2, 2, 1, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15,
                      15]
-        self.assertTrue(python_ass_test.duplication_of_my_list(prototype))
+        self.assertTrue(set_file.duplication_of_my_list(prototype))
 
     def test_eliminate_duplicate_list(self):
         prototype = [1, 3, 2, 2, 1, 3, 4, 4, 5, 5, 6, 6, 7, 7, 8, 8, 9, 9, 10, 10, 11, 11, 12, 12, 13, 13, 14, 14, 15,
                      15]
         result = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]
-        self.assertEqual(result, python_ass_test.eliminate_duplicate_list(prototype))
+        self.assertEqual(result, set_file.eliminate_duplicate_list(prototype))
 
     def test_add_every_third_element(self):
         prototype = [1, 2, 10, 4, 5, 10, 7, 8, 9]
         result = 29
-        self.assertEqual(result, python_ass_test.add_every_third_element(prototype))
+        self.assertEqual(result, set_file.add_every_third_element(prototype))
 
     def test_add_the_first_middle_last(self):
         prototype = [1, 2, 10, 4, 5, 5, 10, 7, 8, 10]
         result = 16
-        self.assertEqual(result, python_ass_test.add_the_first_middle_last(prototype))
+        self.assertEqual(result, set_file.add_the_first_middle_last(prototype))
 
     def test_sum_collection(self):
         prototype = (1, 2, 10, 4, 5, 5, 10, 10)
         result = 22
-        self.assertEqual(result, python_ass_test.sum_collection(prototype))
+        self.assertEqual(result, set_file.sum_collection(prototype))
 
     def test_remove_item(self):
         prototype = {1, 2, 3, 4, 5, 6, 8, 10}
         element = 5
         result = 5
-        self.assertEqual(result, python_ass_test.remove_item(prototype, element))
+        self.assertEqual(result, set_file.remove_item(prototype, element))
 
     def test_find_interception(self):
         prototype = {1, 2, 3, 4, 5, 6, 8, 10}
         prototype1 = {11, 2, 3, 14, 5, 16, 8, 10}
         result = {2, 3, 5, 8, 10}
-        self.assertEqual(result, python_ass_test.find_interception(prototype, prototype1))
+        self.assertEqual(result, set_file.find_interception(prototype, prototype1))

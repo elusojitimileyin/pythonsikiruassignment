@@ -15,14 +15,17 @@ def add_contact(name, phoneNumber):
     contact_phone_number.append(phoneNumber)
 
 
-def remove_contact_name(name_to_remove):
-    for name in contact_name:
+def remove_contact(name_to_remove,phone_number_to_remove ):
+        for name in contact_name:
         if name == name_to_remove:
             contact_name.remove(name)
+            for phone_number in contact_phone_number:
+                if phone_number == phone_number_to_remove:
+                    contact_phone_number.remove(phone_number)
         else:
             print("contact not found")
 
-
+        return remove_contact
 def remove_contact_phone_number(phone_number_to_remove):
     for phone_number in contact_phone_number:
         if phone_number == phone_number_to_remove:
@@ -44,3 +47,6 @@ def edit_contacts(name, phoneNumber, new_name, new_phoneNumber):
     for index in range(len(contact_phone_number)):
         if contact_phone_number[index] == phoneNumber:
             contact_phone_number[index] = new_phoneNumber
+
+
+
